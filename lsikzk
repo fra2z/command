@@ -1,0 +1,21 @@
+#!/bin/bash
+
+STR=("空前絶後のおおおおおお！！" "超絶孤高のピン芸人！" "笑いを愛し" "笑いに愛された男！" "最強無敵のピン芸人！" "一富士、二鷹、サンシャイーン！！" "いーけ！ボコッ！ざーき！！" "イエエェェーーーイ！！")
+STR2=("イエェーーイ！" "イエエェーーイ！！" "イエエェェーーーイ！！" "イエエェェーーーーイ！！" "イエエエェェーーーイ！！！")
+
+while getopts y OPT
+do
+  case $OPT in
+    "y" ) FLG_Y="TRUE" ;;
+  esac
+done
+
+if [ "$FLG_Y" = "TRUE" ]; then
+  for a in $( ls ); do
+    echo ${STR2[($RANDOM % 5)]}
+  done
+else
+  for a in $( ls ); do
+    echo ${STR[($RANDOM % 8)]}
+  done
+fi
